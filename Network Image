@@ -1,0 +1,22 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Color.fromARGB(255, 217, 242, 255),
+        appBar: AppBar(
+          title: Text('< Edit Profile'),
+          backgroundColor: Color.fromARGB(255, 138, 216, 255),
+        ),
+        body: Center(child: Image(
+          image: NetworkImage(
+              'https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-james-wheeler-414612.jpg&fm=jpg'),
+        ),),)
+      );
+  }
+}
