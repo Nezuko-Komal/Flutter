@@ -1,0 +1,178 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
+
+void main() {
+  runApp(FirstApp());
+}
+
+class FirstApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+  home: Scaffold(
+      body: SafeArea(
+        child: Column(
+         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SizedBox(height: 20,),
+             Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Icon(Icons.flag),
+                Icon(Icons.star),
+                Icon(Icons.currency_rupee),
+                Icon(Icons.diamond),
+              ],
+            ),
+            SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                     color: Colors.lightBlue.shade300,
+                  ),
+                  width: 70,
+                  margin: EdgeInsets.all(5),
+                    child: Text('Try Plus'),
+                ),
+              ],
+            ),
+            SizedBox(height: 15,),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundImage: AssetImage("images/img4.jpg"),
+                  ),
+                ),
+                Container(
+                  child: Text('Basics 1',),
+                )
+              ],
+            ),
+            SizedBox(height: 30,),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Column(
+                  children: [
+                    Container(
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundImage: AssetImage("images/img5.jpg"),
+                      ),
+                    ),
+                    Container(
+                      child: Text('Basics 2',),
+                    )
+                  ],
+                ),
+                Column(
+                  
+                  children: [
+                    Container(
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundImage: AssetImage("images/img6.jpg"),
+                      ),
+                    ),
+                    Container(
+                      child: Text('Basics 3',),
+                    )
+                  ],
+                ),
+              ],
+            ),
+             SizedBox(height: 20,),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundImage: AssetImage("images/img7.jpg"),
+                  ),
+                ),
+                Container(
+                  child: Text('Basics 4'),
+                )
+              ],
+            ),
+            SizedBox(height: 30,),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Column(
+                  children: [
+                    Container(
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundImage: AssetImage("images/img8.jpg"),
+                      ),
+                    ),
+                    Container(
+                      child: Text('Basics 4',),
+                    )
+                  ],
+                ),
+                Column(
+                  
+                  children: [
+                    Container(
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundImage: AssetImage("images/img9.jpg"),
+                      ),
+                    ),
+                    Container(
+                      child: Text('Basics 5',),
+                    )
+                  ],
+                ),
+                Column(
+                  children: [
+                    Container(
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundImage: AssetImage("images/img10.jpg"),
+                      ),
+                    ),
+                    Container(
+                      child: Text('Basics 6',),
+                    )
+                  ],
+                ),
+              ],
+            ),
+
+             SizedBox(height: 15,),
+            const Row(
+             
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+
+                Icon(Icons.category),
+                Icon(Icons.person),
+                Icon(Icons.shield),
+                Icon(Icons.card_giftcard),
+                    
+              ],
+            ),
+            ],
+        ),
+      ),
+  
+    ),
+    );
+    
+  }
+}
