@@ -1,0 +1,62 @@
+import 'package:flutter/material.dart';
+
+class Navbar extends StatelessWidget {
+  const Navbar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          Container(child: DrawerHeader(
+            decoration: BoxDecoration(
+                color: Colors.lightBlue.shade200,
+              ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                    radius: 40,
+                    backgroundImage: AssetImage('images/img1.jpeg'),
+                  ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [Text('Name:xyz'), Text('email: XYZ@gmail.com')],
+                ),
+              ],
+            ),
+          ),),
+            ListTile(
+              leading: const Icon(Icons.category),
+              title: const Text('My product'),
+              onTap: () => print('My product tapped'),
+            ),
+         
+          ListTile(
+            leading: const Icon(Icons.account_circle),
+            title: const Text('My profile'),
+            onTap: () => print('My profile tapped'),
+          ),
+          ListTile(
+            leading: const Icon(Icons.history),
+            title: const Text('Enquiry History'),
+            onTap: () => print('Enquiry History tapped'),
+          ),
+          ListTile(
+            leading: const Icon(Icons.subscriptions),
+            title: const Text('Subscription'),
+            onTap: () => print('Subscription tapped'),
+          ),
+          ListTile(
+            leading: const Icon(Icons.headset_mic),
+            title: const Text('Contact us'),
+            onTap: () => print('Contact us tapped'),
+          ),
+        ],
+      ),
+    );
+  }
+}
