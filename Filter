@@ -1,0 +1,196 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp( MyApp());
+}
+
+class MyApp extends StatelessWidget {
+
+  Widget build(BuildContext context) {
+    return MaterialApp(
+     home: Scaffold(
+      body: SafeArea(child: Column(
+        children: [
+          SizedBox(height: 20,),
+          Container(
+            decoration: BoxDecoration (border: Border(bottom: BorderSide( width: 2), ),),
+            padding: EdgeInsets.all(5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Filter(0)', style: TextStyle(fontSize: 22),),
+            Text('Close' , style: TextStyle(fontSize: 22, color: Colors.blue.shade600),),
+              ],
+            ),
+          ),
+
+        SizedBox(height: 20,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text('Brand', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+          ],
+        ),
+
+        SizedBox(height: 20,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+          ElevatedButton( onPressed: () {
+              print('Button Pressed');
+            }, 
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.blue.shade100, 
+            elevation: 2,  
+            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+            shape: RoundedRectangleBorder( 
+            borderRadius: BorderRadius.circular(10),),
+            ),
+             
+            child: Text('Vivo'),
+            ),
+
+             ElevatedButton( onPressed: () {
+              print('Button Pressed');
+            }, 
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.blue.shade100, 
+            elevation: 2,  
+            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+            shape: RoundedRectangleBorder( 
+            borderRadius: BorderRadius.circular(10),),
+            ),
+             
+            child: Text('Oppo'),
+            ),
+
+             ElevatedButton( onPressed: () {
+              print('Button Pressed');
+            }, 
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.blue.shade100, 
+            elevation: 2,  
+            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+            shape: RoundedRectangleBorder( 
+            borderRadius: BorderRadius.circular(10),),
+            ),
+             
+            child: Text('Redmi'),
+            ),
+        ],
+      ),
+      
+       SizedBox(height: 20,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+
+             ElevatedButton( onPressed: () {
+              print('Button Pressed');
+            }, 
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.blue.shade100, 
+            elevation: 2,  
+            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+            shape: RoundedRectangleBorder( 
+            borderRadius: BorderRadius.circular(10),),
+            ),
+             
+            child: Text('Realme'),
+            ),
+
+             ElevatedButton( onPressed: () {
+              print('Button Pressed');
+            }, 
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.blue.shade100, 
+            elevation: 2,  
+            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+            shape: RoundedRectangleBorder( 
+            borderRadius: BorderRadius.circular(10),),
+            ),
+             
+            child: Text('Samsung'),
+            ),
+        ],
+      ),
+
+        SizedBox(height: 20,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            ElevatedButton(onPressed: () {
+              print('Button Pressed');
+            },
+           style: ElevatedButton.styleFrom(backgroundColor: Colors.blue.shade100, 
+            elevation: 2,  
+            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+            shape: RoundedRectangleBorder( 
+            borderRadius: BorderRadius.circular(10),),
+            ),
+            child: Text('Iphone'),
+            ),
+            ],
+            ),
+
+          SizedBox(height: 20,),
+
+        Container(
+          padding: EdgeInsets.only(top: 10),
+          decoration: BoxDecoration(border: Border(top: BorderSide(width: 1),),),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text('SmartPhone', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+            ],
+          ),
+        ),
+
+          SizedBox(height: 20,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              ElevatedButton(onPressed: ()
+              {print('Button Pressed');}, 
+              child: Text('Smart Phone'),
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.blue.shade100, 
+            elevation: 2,
+            padding: EdgeInsets.symmetric(horizontal: 40,vertical: 10),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50),
+            ),
+            ),
+              ),
+            ],
+        ),
+
+        SizedBox(height: 20,),
+        Container(
+          padding: EdgeInsets.only(top: 5),
+          decoration: BoxDecoration(border: Border(top: BorderSide(width: 1),),),
+          child: Row(
+            children: [
+              Text('Basic Phone', style: TextStyle(fontSize: 20 , fontWeight: FontWeight.bold),),
+            ],
+          ),
+        ),
+
+        SizedBox(height: 20,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              ElevatedButton(onPressed: ()
+              {print('Button Pressed');}, 
+              child: Text('Basic Phone'),
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.blue.shade100, 
+            elevation: 2,
+            padding: EdgeInsets.symmetric(horizontal: 40,vertical: 10),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50),
+            ),
+            ),
+              ),
+            ],
+        ),
+          ],
+        ),
+      ),
+     ),
+     );
+  }
+}
