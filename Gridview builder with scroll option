@@ -1,0 +1,283 @@
+import 'package:firstapp/drawer.dart';
+import 'package:flutter/material.dart';
+
+class newApp extends StatelessWidget {
+  List<String> pimage = [
+  "images/img11.png",
+    "images/img20.png",
+    "images/img11.png",
+    "images/img20.png",
+    "images/img11.png",
+    "images/img20.png",
+];
+
+List<String> pname = [
+  "RedmiNote 10 Pro",
+  "Realme Naro 15",
+  "Samsung ultra 23",
+  "One Plus+",
+  "Oppo F13",
+  "VIVO 789",
+];
+
+List<String> pprice = [
+  "500000",
+  "499999",
+  "230000",
+  "320000",
+  "890000",
+  "900000",
+];
+List<String> prnum = [
+  "4.5",
+  "3.5",
+  "2.4",
+  "1.2",
+  "3.4",
+  "2.3",
+];
+List<String> cln = [
+  "Laptops",
+  "Mobiles & Tablets",
+  "Televisions",
+  "Cameras",
+  "Smart Gadgets",
+  "Electronics",
+  "Laptops",
+  "Mobiles & Tablets",
+  "Televisions",
+];
+
+  List<String> cl = [
+    "images/img11.png",
+    "images/img20.png",
+    "images/img11.png",
+    "images/img20.png",
+    "images/img11.png",
+    "images/img20.png",
+  ];
+
+  
+
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: const Text("One Store Business"),
+        backgroundColor: Colors.white,
+      ),
+      drawer: const myDrawer(),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Column(
+          children: [
+            Container(
+              alignment: Alignment.topLeft,
+              margin: const EdgeInsets.only(top: 10, left: 20, bottom: 30),
+              child: const Text(
+                "Category",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    GridView.builder(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3,
+                        crossAxisSpacing: 9.0,
+                        mainAxisSpacing: 3.0,
+                        mainAxisExtent: 190,
+                      ),
+                      itemCount: cl.length,
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemBuilder: (context, index) {
+                        return myWidget(context, index);
+                      },
+                    ),
+                    const SizedBox(height: 05),
+                    Column(
+                      children: [
+                        Container(
+                          alignment: Alignment.topLeft,
+                          margin: const EdgeInsets.only(left: 20, bottom: 30),
+                          child: const Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Trending Products",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        GridView.builder(
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 15.0,
+                            mainAxisSpacing: 20.0,
+                            mainAxisExtent: 245,
+                          ),
+                          itemCount: pname.length,
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return tp(context, index);
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget myWidget(BuildContext context, index) {
+    return GestureDetector(
+      onTap: () {
+        print('Tapped');
+      },
+      child: Column(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(5),
+                topRight: Radius.circular(5),
+              ),
+              border: Border(
+                top: BorderSide(width: 1),
+                left: BorderSide(width: 1),
+                right: BorderSide(width: 1),
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: Image.asset(
+                cl[index],
+                fit: BoxFit.cover,
+                height: 100,
+                width: double.infinity,
+              ),
+            ),
+          ),
+          Container(
+            height: 50,
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(5),
+                bottomRight: Radius.circular(5),
+              ),
+              border: Border.all(width: 1),
+            ),
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(3.0),
+                child: Text(
+                  cln[0],
+                  style: const TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+        );
+      
+  }
+
+
+//trending products
+Widget tp(BuildContext context, index) {
+  return GestureDetector(
+    onTap: () {
+      print('tapped');
+    },
+    child: Container(
+      decoration: BoxDecoration(
+        color: const Color.fromARGB(255, 248, 242, 239),
+        borderRadius: BorderRadius.circular(18),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(2),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(9),
+                  ),
+                ),
+                const Icon(
+                  Icons.star,
+                  size: 15,
+                  color: Color.fromARGB(255, 226, 155, 49),
+                ),
+                Text(
+                  " " + prnum[index] + " Ratings ",
+                  style: const TextStyle(fontSize: 9),
+                )
+              ],
+            ),
+            Image.asset(
+              pimage[index],
+              height: 130,
+              width: 110,
+            ),
+            Text(
+              pname[index],
+              style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
+              height: 7,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(" ₹ "),
+                Text(
+                  pprice[index],
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  // ignore: sort_child_properties_last
+                  child: const Text("+"),
+                  style: ButtonStyle(
+                    minimumSize: MaterialStateProperty.all(
+                        const Size(20, 30)), // Adjust size as needed
+                    backgroundColor: MaterialStateProperty.all(
+                        const Color.fromARGB(
+                            255, 204, 227, 247)), // Set button color
+                  ),
+                )
+              ],
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+}
