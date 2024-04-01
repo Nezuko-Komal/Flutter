@@ -1,0 +1,39 @@
+-----------------------Setting shared prefernce state(Navigating enquiry to login)---------------------
+
+ElevatedButton(onPressed: (){
+                    shared_Class.instance.setBool('login',false);
+                     //Navigator.push(context, MaterialPageRoute(builder: (context) => login()));
+                  }, child: Text("Logout")),
+
+-----------------------Setting shared prefernce state(if else)---------------------
+ElevatedButton(onPressed: (){
+                        if(boolValue == true){
+                           Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => enquiry(),
+                          ));
+                        }
+                        else {
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => login(),
+                          ));
+                        }
+                      }, child: Text("Next"),),
+
+-----------------------creating shared prefernce class---------------------
+ElevatedButton(onPressed: (){
+// ignore_for_file: camel_case_types
+
+import 'package:shared_preferences/shared_preferences.dart';
+
+class shared_Class {
+  static late SharedPreferences prefvalue;
+  static Future<void> init() async {
+    prefvalue = await SharedPreferences.getInstance();
+  }
+
+  static SharedPreferences get instance => prefvalue;
+}
