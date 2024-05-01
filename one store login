@@ -1,0 +1,19 @@
+Stack(alignment: Alignment.center, children: [
+                        const Divider(
+                          thickness: 1,
+                          color: Colors.white,
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              bottom: 6, left: 18, right: 18, top: 6),
+                          decoration: BoxDecoration(
+                              color: Colors.amber,
+                              border: Border.all(
+                                color: const Color.fromARGB(255, 49, 48, 48),
+                              ),
+                              borderRadius: BorderRadius.circular(15)),
+                          child: const Text("Log in or Sign up",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w500, fontSize: 16)),
+                        ),
+                      ]),
